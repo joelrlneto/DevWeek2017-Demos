@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo 03 - DevWeek</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+        <ul>
+            <li v-for="p in palestras">
+                <p>{{ p.titulo }} <img src="play.png" v-if="p.exibida === true"></p>
+                <p>{{ p.palestrante }}</p>
+            </li>
+        </ul>   
+    </div>
+    <script src="../vue.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                titulo : 'Canal .NET DevWeek',
+                palestras: [
+                    {
+                        titulo: 'Progressive Web Aps com Angular  Ionic',
+                        palestrante : 'André Baltieri',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'Novidades do VSTS',
+                        palestrante : 'André Dias',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'Active Learning em Chatbots com Bot Framework e LUIS',
+                        palestrante : 'André Secco',
+                        exibida : true
+                    },
+                    {
+                        titulo: 'Aplicativos inteligentes com Xamarin e Microsoft Cognitive Services',
+                        palestrante : 'Angelo Belchior',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'Você conhece DataOps?',
+                        palestrante : 'Dani Monteiro',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'Processamento e análise de conteúdo com o Cognitive Services',
+                        palestrante : 'Douglas Romão',
+                        exibida : true
+                    },
+                    {
+                        titulo: 'Novidades do C# 7, 7.1, 7.2 e 8',
+                        palestrante : 'Giovanni Bassi',
+                        exibida : true
+                    },
+                    {
+                        titulo: 'Manipulando Grafos com Neo4j e C#',
+                        palestrante : 'Jhonathan Souza',
+                        exibida : true
+                    },
+                    {
+                        titulo: 'Primeiros passos com o Vue.js',
+                        palestrante : 'Joel Rodrigues',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'Primeiros passos com MongoDB - da instalação até um replicaset',
+                        palestrante : 'Leandro Domingues',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'Desenhando arquiteturas serverless no AWS',
+                        palestrante : 'Luis Felipe',
+                        exibida : true
+                    },
+                    {
+                        titulo: '.NET Core - Continous Integration e Continous Delivery com Jenkins',
+                        palestrante : 'Luiz Carlos Faria',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'Integrando sua aplicação ASP.NET Core com o Azure AD B2C',
+                        palestrante : 'Mateus Rodrigues',
+                        exibida : false
+                    },
+                    {
+                        titulo: 'APIs multiplataforma com ASP.NET Core 2.0',
+                        palestrante : 'Renato Groffe',
+                        exibida : true
+                    },
+                    {
+                        titulo: 'DevOps - Promoção automatizada de pacotes alpha, beta e stable com Git e VSTS',
+                        palestrante : 'Ricardo Serradas',
+                        exibida : false
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

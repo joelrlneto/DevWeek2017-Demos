@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <title>Demo 5 - DevWeek</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>{{ titulo }}</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Cadastrar palestrante
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <input type="text" v-model="nomePalestrante" class="form-control" id="txt-nome" placeholder="Nome do palestrante">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" v-on:click="adicionarPalestrante">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Palestrantes cadastrados
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="p in palestrantes">{{ p }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../vue.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                titulo : 'Canal .NET DevWeek',
+                nomePalestrante : '',
+                palestrantes : []
+            },
+            methods : {
+                adicionarPalestrante : function(){
+                    this.palestrantes.push(this.nomePalestrante);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
